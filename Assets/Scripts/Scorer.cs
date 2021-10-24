@@ -19,7 +19,7 @@ public class Scorer : MonoBehaviour
 
         if (!hasChildren && startTimer >= timerWaitFor)
         {
-            celebration.Stop();
+            celebration.Stop(false,ParticleSystemStopBehavior.StopEmittingAndClear);
             startTimer = timerWaitFor;
         }
     }
