@@ -11,8 +11,13 @@ public class SpawnCubesAtRandom : MonoBehaviour
     [SerializeField] float waitTime = 2f;
     float startTime = 0;
 
+
+    WaitForSecondsRealtime WaitForSeconds;
+    [SerializeField] float waitTimeForCoroutine = 1.5f;
+
     private void Start()
     {
+        WaitForSeconds = new WaitForSecondsRealtime(waitTimeForCoroutine);
         for (int i = 0; i < enemies.Count; i++)
         {
             SetEnemyActiveState(enemies[i].gameObject, false);
@@ -54,7 +59,6 @@ public class SpawnCubesAtRandom : MonoBehaviour
         go.SetActive(isActive);
     }
 
-    //
     private void SetEnemyActiveState(GameObject go, bool isActive, Vector3 pos, Quaternion quaternion)
     {
         go.SetActive(isActive);
@@ -64,7 +68,7 @@ public class SpawnCubesAtRandom : MonoBehaviour
 
     IEnumerator TurnOffGameObject(GameObject go)
     {
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return WaitForSeconds;
         SetEnemyActiveState(go, false);
     }
 }
