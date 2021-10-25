@@ -699,7 +699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 340906652704881928, guid: a67c5993318da11429ff830546fbd543, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 340906652704881930, guid: a67c5993318da11429ff830546fbd543, type: 3}
       propertyPath: m_Enabled
@@ -965,7 +965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 340906652704881928, guid: a67c5993318da11429ff830546fbd543, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 340906652704881930, guid: a67c5993318da11429ff830546fbd543, type: 3}
       propertyPath: m_Enabled
@@ -2934,6 +2934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16dd896212490a4f976e7b9a90635f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesCount: 0
   spawnPoints:
   - {fileID: 672343960}
   - {fileID: 2072692654}
@@ -2956,6 +2957,7 @@ MonoBehaviour:
   - {fileID: 392194562}
   - {fileID: 1220185689}
   - {fileID: 1406755952}
+  waitTime: 4
 --- !u!1 &958026384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,7 +3403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 340906652704881928, guid: a67c5993318da11429ff830546fbd543, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 340906652704881930, guid: a67c5993318da11429ff830546fbd543, type: 3}
       propertyPath: m_Enabled
@@ -5443,7 +5445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 340906652704881928, guid: a67c5993318da11429ff830546fbd543, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 340906652704881930, guid: a67c5993318da11429ff830546fbd543, type: 3}
       propertyPath: m_Enabled
@@ -5677,7 +5679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 340906652704881928, guid: a67c5993318da11429ff830546fbd543, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 340906652704881930, guid: a67c5993318da11429ff830546fbd543, type: 3}
       propertyPath: m_Enabled

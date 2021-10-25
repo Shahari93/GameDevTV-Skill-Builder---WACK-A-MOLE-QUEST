@@ -15,7 +15,8 @@ public class Exploder : MonoBehaviour
         {
             print("Aww, you got me");
             spawnCubes.enemies.RemoveAt(0);
-            Destroy(gameObject);
+            spawnCubes.enemiesCount--;
+            gameObject.SetActive(false);
         }
     }
 }

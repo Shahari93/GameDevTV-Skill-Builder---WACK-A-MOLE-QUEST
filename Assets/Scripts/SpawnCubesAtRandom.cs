@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class SpawnCubesAtRandom : MonoBehaviour
 {
+    [HideInInspector] public int enemiesCount;
     [SerializeField] private Transform[] spawnPoints;
     public List<GameObject> enemies;
 
+    [SerializeField] float waitTime = 2f;
     float startTime = 0;
-    float waitTime = 2f;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class SpawnCubesAtRandom : MonoBehaviour
         {
             SetEnemyActiveState(enemies[i].gameObject, false);
         }
+        enemiesCount = enemies.Count;
     }
 
     private void Update()
@@ -28,12 +30,16 @@ public class SpawnCubesAtRandom : MonoBehaviour
         startTime += Time.deltaTime;
         if (startTime >= waitTime)
         {
-            foreach (var enemy in enemies)
+            if (enemiesCount >= 0)
             {
-                GameObject enemySpawn = Instantiate(enemy.gameObject, ReturnRandSpawnPoint().position, Quaternion.identity);
-                SetEnemyActiveState(enemySpawn, true);
-                startTime = 0;
-                StartCoroutine(TurnOffGameObject(enemySpawn));
+                foreach (var enemy in enemies)
+                {
+                    Vector3 offset = new Vector3(transform.position.x, .5f, transform.position.z);
+                    GameObject enemySpawn = Instantiate(enemy.gameObject, ReturnRandSpawnPoint().position + offset, Quaternion.identity);
+                    SetEnemyActiveState(enemySpawn, true);
+                    startTime = 0;
+                    StartCoroutine(TurnOffGameObject(enemySpawn));
+                }
             }
         }
     }
