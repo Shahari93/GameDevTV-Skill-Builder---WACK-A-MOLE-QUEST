@@ -35,10 +35,9 @@ public class SpawnCubesAtRandom : MonoBehaviour
                 foreach (var enemy in enemies)
                 {
                     Vector3 offset = new Vector3(transform.position.x, .5f, transform.position.z);
-                    GameObject enemySpawn = Instantiate(enemy.gameObject, ReturnRandSpawnPoint().position + offset, Quaternion.identity);
-                    SetEnemyActiveState(enemySpawn, true);
+                    SetEnemyActiveState(enemy.gameObject, true, enemy.transform.position + offset, enemy.transform.rotation);
                     startTime = 0;
-                    StartCoroutine(TurnOffGameObject(enemySpawn));
+                    StartCoroutine(TurnOffGameObject(enemy.gameObject));
                 }
             }
         }
@@ -53,6 +52,14 @@ public class SpawnCubesAtRandom : MonoBehaviour
     private void SetEnemyActiveState(GameObject go, bool isActive)
     {
         go.SetActive(isActive);
+    }
+
+    //
+    private void SetEnemyActiveState(GameObject go, bool isActive, Vector3 pos, Quaternion quaternion)
+    {
+        go.SetActive(isActive);
+        go.transform.position = ReturnRandSpawnPoint().position;
+        go.transform.rotation = quaternion;
     }
 
     IEnumerator TurnOffGameObject(GameObject go)
