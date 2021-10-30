@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.070632555, g: 0.08167327, b: 0.06921908, a: 1}
+  m_IndirectSpecularColor: {r: 0.070632555, g: 0.08167329, b: 0.0692191, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2958,6 +2958,7 @@ MonoBehaviour:
   - {fileID: 1220185689}
   - {fileID: 1406755952}
   waitTime: 4
+  waitTimeForCoroutine: 1.5
 --- !u!1 &958026384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3895,6 +3896,8 @@ MonoBehaviour:
   startTimer: 0
   timerWaitFor: 2
   celebration: {fileID: 2051126934}
+  spawner: {fileID: 933530422}
+  timer: {fileID: 307201915}
 --- !u!1 &1323887152
 GameObject:
   m_ObjectHideFlags: 0

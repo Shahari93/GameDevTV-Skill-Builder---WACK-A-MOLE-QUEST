@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scorer : MonoBehaviour
 {
@@ -6,11 +7,13 @@ public class Scorer : MonoBehaviour
     [SerializeField] private float timerWaitFor = 2f;
 
     [SerializeField] ParticleSystem celebration;
+    [SerializeField] SpawnCubesAtRandom spawner;
+    [SerializeField] Timer timer;
     bool hasChildren = true;
 
     void Update()
     {
-        if (transform.childCount == 0)
+        if (spawner.enemies.Count <= 0)
         {
             celebration.Play();
             startTimer += Time.deltaTime;
@@ -19,8 +22,10 @@ public class Scorer : MonoBehaviour
 
         if (!hasChildren && startTimer >= timerWaitFor)
         {
-            celebration.Stop(false,ParticleSystemStopBehavior.StopEmittingAndClear);
+            celebration.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
             startTimer = timerWaitFor;
+            StartCoroutine(timer.ResetTimer());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
