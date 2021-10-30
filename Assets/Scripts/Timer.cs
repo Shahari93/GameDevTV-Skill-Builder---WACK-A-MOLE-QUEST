@@ -27,4 +27,11 @@ public class Timer : MonoBehaviour
         elapsedTime = 0;
         timerText.text = elapsedTime.ToString();
     }
+
+    public IEnumerator SlowDownTime()
+    {
+        Time.timeScale = 0.3f;
+        yield return WaitForSecondsRealtime;
+        Time.timeScale = 1f;
+    }
 }
